@@ -14,13 +14,13 @@ String::Smart - Strings that know how to escape themselves.
 
 =head1 VERSION
 
-This document describes String::Smart version 0.2
+This document describes String::Smart version 0.3
 
 =cut
 
 use vars qw( $VERSION @ISA @EXPORT_OK %EXPORT_TAGS );
 
-$VERSION     = '0.2';
+$VERSION     = '0.3';
 @ISA         = qw( Exporter );
 @EXPORT_OK   = qw( already as add_rep literal plain rep str_val );
 %EXPORT_TAGS = ( all => \@EXPORT_OK );
@@ -42,8 +42,8 @@ my %rep_map = ();
 =head1 DESCRIPTION
 
 String::Smart implements overloaded string values that know how they are
-currently encoded or escaped and are capapable of transforming
-themselves into other encodings.
+currently encoded or escaped and are capable of transforming themselves
+into other encodings.
 
 In many applications it is necessary to apply various escaping rules to
 strings before they can safely be used. For example when building a SQL
@@ -59,7 +59,7 @@ each string.
 
 With C<String::Smart> you simply make the query building routine
 ask for SQL escaped strings and behind the scenes the appropriate
-transformations will be applied to each string based on it's
+transformations will be applied to each string based on its
 current encoding.
 
 For example:
@@ -226,7 +226,8 @@ sub already($$) {
 
 =head2 C<< literal >>
 
-Convert a string to the specified encoding and return it as a normal string.
+Convert a string to the specified encoding and return it as a normal
+unblessed string.
 
 =cut
 
@@ -316,6 +317,10 @@ Inspired in part by http://xkcd.com/327/
     alt="Exploits of a Mom" />
 
 Thanks Rich for the lead!
+
+=head1 SEE ALSO
+
+L<String::EscapeCage>
 
 =head1 LICENCE AND COPYRIGHT
 
